@@ -20,7 +20,7 @@ call plug#end()
 set termguicolors
 color onedark
 
-syntax sync fromstart
+autocmd BufEnter * :syntax sync fromstart
 
 set mouse=a
 set directory^=$HOME/.vim/tmp//
@@ -29,6 +29,7 @@ set noshowcmd
 set number
 set laststatus=2
 set relativenumber
+set redrawtime=10000
 set lazyredraw
 set ignorecase
 set wildmenu
