@@ -41,6 +41,10 @@ set shiftwidth=2
 nnoremap ; :
 map <Leader>b :Buffers<CR>
 map <Leader>f :Files<CR>
+map <Leader>e :Lexplore<CR>
 
+let g:netrw_winsize = 25
+let g:netrw_liststyle = 3
+let g:netrw_banner = 0
 let g:coc_global_extensions = ['coc-tsserver', 'coc-json', 'coc-styled-components', 'coc-eslint', 'coc-prettier', 'coc-emmet']
 let g:lightline = { 'colorscheme': 'onedark' }
