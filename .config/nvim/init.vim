@@ -4,6 +4,8 @@ Plug 'sheerun/vim-polyglot'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
+Plug 'tommcdo/vim-fubitive'
 Plug 'justinmk/vim-sneak'
 Plug 'preservim/nerdtree'
 Plug 'jiangmiao/auto-pairs'
@@ -17,9 +19,8 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 set termguicolors
+let g:onedark_terminal_italics = 1
 color onedark
-
-syntax sync fromstart
 
 noremap <ScrollWheelDown> j
 noremap <ScrollWheelUp> k
