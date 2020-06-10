@@ -27,7 +27,6 @@ noremap <ScrollWheelUp> k
 set mouse=a
 set directory^=$HOME/.vim/tmp//
 set noshowmode
-set backspace=indent,eol,start
 set noshowcmd
 set number
 set laststatus=2
