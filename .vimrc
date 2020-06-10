@@ -20,6 +20,8 @@ call plug#end()
 set termguicolors
 color onedark
 
+syntax sync fromstart
+
 set mouse=a
 set directory^=$HOME/.vim/tmp//
 set noshowmode
