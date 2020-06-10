@@ -6,7 +6,6 @@ Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'tommcdo/vim-fubitive'
-Plug 'justinmk/vim-sneak'
 Plug 'preservim/nerdtree'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
@@ -43,6 +42,5 @@ map <Leader>b :Buffers<CR>
 map <Leader>f :Files<CR>
 map <Leader>t :NERDTreeToggle<CR>
 
-let g:sneak#s_next = 1
 let g:coc_global_extensions = ['coc-tsserver', 'coc-json', 'coc-styled-components', 'coc-eslint', 'coc-prettier', 'coc-emmet']
 let g:lightline = { 'colorscheme': 'onedark' }
