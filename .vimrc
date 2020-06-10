@@ -38,6 +38,7 @@ set expandtab
 set shiftwidth=2
 
 nnoremap ; :
+nnoremap <Leader>b :CtrlPBuffer<CR>
 map <Leader>e :Lexplore<CR>
 
 let g:netrw_winsize = 25
