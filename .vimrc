@@ -21,9 +21,6 @@ call plug#end()
 set termguicolors
 color onedark
 
-noremap <ScrollWheelDown> j
-noremap <ScrollWheelUp> k
-
 set mouse=a
 set directory^=$HOME/.vim/tmp//
 set noshowmode
