@@ -24,6 +24,7 @@ color onedark
 noremap <ScrollWheelDown> j
 noremap <ScrollWheelUp> k
 
+set directory^=$HOME/.vim/tmp//
 set noshowmode
 set backspace=indent,eol,start
 set noshowcmd
@@ -32,6 +33,7 @@ set laststatus=2
 set relativenumber
 set lazyredraw
 set ignorecase
+set wildmenu
 set signcolumn=yes
 set updatetime=300
 
