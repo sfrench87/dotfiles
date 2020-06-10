@@ -1,4 +1,4 @@
-call plug#begin('~/.config/nvim/plugged')
+call plug#begin('~/.vim/plugged')
 Plug 'joshdick/onedark.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
@@ -19,14 +19,16 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 set termguicolors
-let g:onedark_terminal_italics = 1
 color onedark
 
 noremap <ScrollWheelDown> j
 noremap <ScrollWheelUp> k
 
 set noshowmode
+set backspace=indent,eol,start
+set noshowcmd
 set number
+set laststatus=2
 set relativenumber
 set lazyredraw
 set ignorecase

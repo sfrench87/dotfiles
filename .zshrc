@@ -19,8 +19,6 @@ source ~/.zsh_plugins.sh
 # Aliases
 alias ls="ls -G"
 alias ll="ls -l"
-alias vi="nvim"
-alias vim="nvim"
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 # Tab Completion
@@ -32,7 +30,6 @@ if [ $(date +'%j') != $(stat -f '%Sm' -t '%j' ~/.zcompdump) ]; then
 else
   compinit -C
 fi
-
 
 # Start Starship
 eval "$(starship init zsh)"
