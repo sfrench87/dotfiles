@@ -24,6 +24,7 @@ color onedark
 noremap <ScrollWheelDown> j
 noremap <ScrollWheelUp> k
 
+set mouse=a
 set directory^=$HOME/.vim/tmp//
 set noshowmode
 set backspace=indent,eol,start
