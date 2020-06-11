@@ -15,7 +15,8 @@ Plug 'tpope/vim-surround'
 call plug#end()
 
 set termguicolors
-color onedark 
+let g:onedark_terminal_italics = 1
+color onedark
 
 autocmd BufEnter * :syntax sync fromstart
 
