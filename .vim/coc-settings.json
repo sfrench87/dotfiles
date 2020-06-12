@@ -14,5 +14,7 @@
     "typescriptreact"
   ],
   "coc.preferences.formatOnSaveFiletypes": ["json", "markdown"],
+  "javascript.suggest.names": false,
+  "coc.source.around.enable": false,
   "prettier.disableSuccessMessage": true
 }

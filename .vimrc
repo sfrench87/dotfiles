@@ -42,6 +42,10 @@ nnoremap ; :
 nnoremap <Leader>b :CtrlPBuffer<CR>
 nnoremap <Leader>e :Lexplore<CR>
 
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
 let g:netrw_winsize = 25
 let g:netrw_liststyle = 3
 let g:netrw_banner = 0
