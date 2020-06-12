@@ -20,6 +20,8 @@ color onedark
 
 autocmd BufEnter * :syntax sync fromstart
 
+set spelllang=en_gb
+
 set mouse=a
 set directory^=$HOME/.vim/tmp//
 set noshowmode
