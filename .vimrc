@@ -1,8 +1,8 @@
 call plug#begin('~/.vim/plugged')
 Plug 'airblade/vim-gitgutter'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'itchyny/lightline.vim'
 Plug 'joshdick/onedark.vim'
+Plug 'itchyny/lightline.vim'
 Plug 'mattn/emmet-vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'sheerun/vim-polyglot'
@@ -15,8 +15,9 @@ Plug 'tpope/vim-surround'
 call plug#end()
 
 set termguicolors
+let g:onedark_hide_endofbuffer = 1
 let g:onedark_terminal_italics = 1
-color onedark
+color onedark 
 
 autocmd BufEnter * :syntax sync fromstart
 
