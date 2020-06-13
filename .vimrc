@@ -2,6 +2,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'airblade/vim-gitgutter'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'jacoborus/tender.vim'
+Plug 'junegunn/gv.vim'
 Plug 'mattn/emmet-vim'
 Plug 'mhinz/vim-startify'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -24,6 +25,7 @@ autocmd BufEnter * :syntax sync fromstart
 set spelllang=en_gb
 
 set autoindent
+set cursorline
 set directory^=$HOME/.vim/tmp//
 set expandtab
 set hlsearch
@@ -60,7 +62,13 @@ let g:coc_global_extensions = ['coc-tsserver', 'coc-json', 'coc-styled-component
 " Airline
 let g:airline_theme = 'tender'
 let g:airline_section_c = '%t%m'
-let g:airline#extensions#coc#enabled ='0'
+let g:airline#extensions#coc#enabled = 0
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#show_splits = 0
+let g:airline#extensions#tabline#show_close_button = 0
+let g:airline#extensions#tabline#show_tab_nr = 0
+let g:airline#extensions#tabline#tab_min_count = 2
+let g:airline#extensions#tabline#show_buffers = 0
 
 " Startify
 function! s:gitModified()
