@@ -1,10 +1,11 @@
 call plug#begin('~/.vim/plugged')
 Plug 'airblade/vim-gitgutter'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'itchyny/lightline.vim'
-Plug 'joshdick/onedark.vim'
+Plug 'jacoborus/tender.vim'
 Plug 'mattn/emmet-vim'
+Plug 'mhinz/vim-startify'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'romainl/vim-cool'
 Plug 'sheerun/vim-polyglot'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'tommcdo/vim-fubitive'
@@ -12,34 +13,33 @@ Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'
+Plug 'vim-airline/vim-airline'
 call plug#end()
 
 set termguicolors
-let g:onedark_hide_endofbuffer = 1
-let g:onedark_terminal_italics = 1
-color onedark 
+color tender
 
 autocmd BufEnter * :syntax sync fromstart
 
 set spelllang=en_gb
 
-set mouse=a
+set autoindent
 set directory^=$HOME/.vim/tmp//
-set noshowmode
-set noshowcmd
-set number
-set laststatus=2
-set relativenumber
-set redrawtime=10000
-set lazyredraw
+set expandtab
+set hlsearch
 set ignorecase
-set wildmenu
+set laststatus=2
+set lazyredraw
+set mouse=a
+set noshowcmd
+set noshowmode
+set number
+set redrawtime=10000
+set relativenumber
+set shiftwidth=2
 set signcolumn=yes
 set updatetime=300
-
-set autoindent
-set expandtab
-set shiftwidth=2
+set wildmenu
 
 nnoremap ; :
 nnoremap <Leader>b :CtrlPBuffer<CR>
@@ -56,4 +56,30 @@ let g:netrw_sort_options = "i"
 let g:ctrlp_user_command = 'fd --type f'
 let g:netrw_list_hide= netrw_gitignore#Hide()
 let g:coc_global_extensions = ['coc-tsserver', 'coc-json', 'coc-styled-components', 'coc-eslint', 'coc-prettier', 'coc-emmet']
-let g:lightline = { 'colorscheme': 'onedark' }
+
+" Airline
+let g:airline_theme = 'tender'
+let g:airline_section_c = '%t'
+let g:airline#extensions#coc#enabled ='0'
+
+" Startify
+function! s:gitModified()
+    let files = systemlist('git ls-files -m 2>/dev/null')
+    return map(files, "{'line': v:val, 'path': v:val}")
+endfunction
+
+function! s:gitUntracked()
+    let files = systemlist('git ls-files -o --exclude-standard 2>/dev/null')
+    return map(files, "{'line': v:val, 'path': v:val}")
+endfunction
+
+let g:startify_custom_header = []
+let g:startify_lists = [
+        \ { 'type': 'files',     'header': ['   MRU']            },
+        \ { 'type': 'dir',       'header': ['   MRU '. getcwd()] },
+        \ { 'type': 'sessions',  'header': ['   Sessions']       },
+        \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
+        \ { 'type': function('s:gitModified'),  'header': ['   Git Modified']},
+        \ { 'type': function('s:gitUntracked'), 'header': ['   Git Untracked']},
+        \ { 'type': 'commands',  'header': ['   Commands']       },
+        \ ]
