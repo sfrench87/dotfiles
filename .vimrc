@@ -59,7 +59,7 @@ let g:coc_global_extensions = ['coc-tsserver', 'coc-json', 'coc-styled-component
 
 " Airline
 let g:airline_theme = 'tender'
-let g:airline_section_c = '%t'
+let g:airline_section_c = '%t%m'
 let g:airline#extensions#coc#enabled ='0'
 
 " Startify
