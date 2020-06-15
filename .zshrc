@@ -23,5 +23,9 @@ else
   compinit -C
 fi
 
+# Bind keys for substring search
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+
 # Start Starship
 eval "$(starship init zsh)"
