@@ -12,13 +12,12 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'jacoborus/tender.vim'
 Plug 'junegunn/gv.vim'
 Plug 'mattn/emmet-vim'
-Plug 'mhinz/vim-startify'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'romainl/vim-cool'
 Plug 'sheerun/vim-polyglot'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'tommcdo/vim-fubitive'
-Plug 'tomtom/tcomment_vim'
+Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'
@@ -35,8 +34,6 @@ set spelllang=en_gb
 set autoindent
 set cursorline
 set directory^=$HOME/.vim/tmp//
-set undodir=~/.vim/undo
-set undofile
 set expandtab
 set hlsearch
 set ignorecase
@@ -49,7 +46,10 @@ set number
 set redrawtime=10000
 set relativenumber
 set shiftwidth=2
+set shortmess=I
 set signcolumn=yes
+set undodir=~/.vim/undo
+set undofile
 set updatetime=300
 set wildmenu
 
@@ -81,25 +81,3 @@ let g:airline#extensions#tabline#show_splits = 0
 let g:airline#extensions#tabline#show_close_button = 0
 let g:airline#extensions#tabline#tab_min_count = 2
 let g:airline#extensions#tabline#show_buffers = 0
-
-" Startify
-function! s:gitModified()
-    let files = systemlist('git ls-files -m 2>/dev/null')
-    return map(files, "{'line': v:val, 'path': v:val}")
-endfunction
-
-function! s:gitUntracked()
-    let files = systemlist('git ls-files -o --exclude-standard 2>/dev/null')
-    return map(files, "{'line': v:val, 'path': v:val}")
-endfunction
-
-let g:startify_custom_header = []
-let g:startify_lists = [
-        \ { 'type': 'files',     'header': ['   MRU']            },
-        \ { 'type': 'dir',       'header': ['   MRU '. getcwd()] },
-        \ { 'type': 'sessions',  'header': ['   Sessions']       },
-        \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
-        \ { 'type': function('s:gitModified'),  'header': ['   Git Modified']},
-        \ { 'type': function('s:gitUntracked'), 'header': ['   Git Untracked']},
-        \ { 'type': 'commands',  'header': ['   Commands']       },
-        \ ]
