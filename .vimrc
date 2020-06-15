@@ -1,3 +1,11 @@
+" Install vim-plug if not installed
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+" Plugins
 call plug#begin('~/.vim/plugged')
 Plug 'airblade/vim-gitgutter'
 Plug 'ctrlpvim/ctrlp.vim'
@@ -47,16 +55,19 @@ nnoremap ; :
 nnoremap <Leader>b :CtrlPBuffer<CR>
 nnoremap <Leader>e :Lexplore<CR>
 
+" Tab completion menus for coc
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
+" Netrw tweaks
 let g:netrw_winsize = 25
 let g:netrw_liststyle = 3
 let g:netrw_banner = 0
 let g:netrw_sort_options = "i"
-let g:ctrlp_user_command = 'fd --type f'
 let g:netrw_list_hide= netrw_gitignore#Hide()
+
+let g:ctrlp_user_command = 'fd --type f'
 let g:coc_global_extensions = ['coc-tsserver', 'coc-json', 'coc-styled-components', 'coc-eslint', 'coc-prettier', 'coc-emmet']
 
 " Airline
