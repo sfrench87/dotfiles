@@ -35,6 +35,8 @@ set spelllang=en_gb
 set autoindent
 set cursorline
 set directory^=$HOME/.vim/tmp//
+set undodir=~/.vim/undo
+set undofile
 set expandtab
 set hlsearch
 set ignorecase
