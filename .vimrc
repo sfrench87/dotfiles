@@ -7,11 +7,12 @@ endif
 
 " Plugins
 call plug#begin('~/.vim/plugged')
-Plug 'airblade/vim-gitgutter'
-Plug 'ctrlpvim/ctrlp.vim'
+Plug 'itchyny/lightline.vim'
 Plug 'jacoborus/tender.vim'
-Plug 'junegunn/vim-peekaboo'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 Plug 'mattn/emmet-vim'
+Plug 'mhinz/vim-signify'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'romainl/vim-cool'
 Plug 'sheerun/vim-polyglot'
@@ -21,11 +22,10 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'
-Plug 'vim-airline/vim-airline'
 call plug#end()
 
 set termguicolors
-color tender
+colo tender 
 
 autocmd BufEnter * :syntax sync fromstart
 
@@ -37,6 +37,7 @@ set directory^=$HOME/.vim/tmp//
 set expandtab
 set hlsearch
 set ignorecase
+set incsearch 
 set laststatus=2
 set lazyredraw
 set mouse=a
@@ -47,15 +48,15 @@ set redrawtime=10000
 set relativenumber
 set shiftwidth=2
 set shortmess=I
-set signcolumn=yes
 set undodir=~/.vim/undo
 set undofile
 set updatetime=300
 set wildmenu
+set wildmode=full
 
 nnoremap ; :
-nnoremap <Leader>b :CtrlPBuffer<CR>
-nnoremap <Leader>e :Lexplore<CR>
+nnoremap <c-p> :FZF<CR>
+nnoremap <c-o> :Lexplore<CR>
 
 " Tab completion menus for coc
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
@@ -69,15 +70,7 @@ let g:netrw_banner = 0
 let g:netrw_sort_options = "i"
 let g:netrw_list_hide= netrw_gitignore#Hide()
 
-let g:ctrlp_user_command = 'fd --type f'
 let g:coc_global_extensions = ['coc-tsserver', 'coc-json', 'coc-styled-components', 'coc-eslint', 'coc-prettier', 'coc-emmet']
 
-" Airline
-let g:airline_theme = 'tender'
-let g:airline_section_c = '%t%m'
-let g:airline#extensions#coc#enabled = 0
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#show_splits = 0
-let g:airline#extensions#tabline#show_close_button = 0
-let g:airline#extensions#tabline#tab_min_count = 2
-let g:airline#extensions#tabline#show_buffers = 0
+" Lightline
+let g:lightline = { 'colorscheme': 'tender' }
