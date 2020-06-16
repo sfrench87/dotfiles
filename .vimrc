@@ -23,7 +23,6 @@ Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'
 call plug#end()
 
-set termguicolors
 let g:seoul256_background = 235
 colo seoul256
 
