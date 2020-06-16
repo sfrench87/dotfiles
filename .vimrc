@@ -48,6 +48,7 @@ set redrawtime=10000
 set relativenumber
 set shiftwidth=2
 set shortmess=I
+set signcolumn=yes
 set undodir=~/.vim/undo
 set undofile
 set updatetime=300
