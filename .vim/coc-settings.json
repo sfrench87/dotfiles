@@ -15,6 +15,7 @@
   ],
   "coc.preferences.formatOnSaveFiletypes": ["json", "markdown"],
   "javascript.suggest.names": false,
+  "suggest.floatEnable": false,
   "coc.source.around.enable": false,
   "prettier.disableSuccessMessage": true
 }

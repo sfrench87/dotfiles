@@ -7,14 +7,13 @@ endif
 
 " Plugins
 call plug#begin('~/.vim/plugged')
+Plug 'airblade/vim-gitgutter'
 Plug 'itchyny/lightline.vim'
-Plug 'jacoborus/tender.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'junegunn/seoul256.vim'
 Plug 'mattn/emmet-vim'
-Plug 'mhinz/vim-signify'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'romainl/vim-cool'
 Plug 'sheerun/vim-polyglot'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'tommcdo/vim-fubitive'
@@ -25,7 +24,8 @@ Plug 'tpope/vim-surround'
 call plug#end()
 
 set termguicolors
-colo tender 
+let g:seoul256_background = 235
+colo seoul256
 
 autocmd BufEnter * :syntax sync fromstart
 
@@ -35,7 +35,6 @@ set autoindent
 set cursorline
 set directory^=$HOME/.vim/tmp//
 set expandtab
-set hlsearch
 set ignorecase
 set incsearch 
 set laststatus=2
@@ -48,7 +47,6 @@ set redrawtime=10000
 set relativenumber
 set shiftwidth=2
 set shortmess=I
-set signcolumn=yes
 set undodir=~/.vim/undo
 set undofile
 set updatetime=300
@@ -74,4 +72,5 @@ let g:netrw_list_hide= netrw_gitignore#Hide()
 let g:coc_global_extensions = ['coc-tsserver', 'coc-json', 'coc-styled-components', 'coc-eslint', 'coc-prettier', 'coc-emmet']
 
 " Lightline
-let g:lightline = { 'colorscheme': 'tender' }
+set ttimeout ttimeoutlen=50
+let g:lightline = { 'colorscheme': 'seoul256' }
