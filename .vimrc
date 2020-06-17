@@ -11,6 +11,7 @@ let mapleader = " "
 " Plugins
 call plug#begin('~/.vim/plugged')
 Plug 'itchyny/lightline.vim'
+Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/seoul256.vim'
@@ -19,10 +20,9 @@ Plug 'mhinz/vim-signify'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'sheerun/vim-polyglot'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
-Plug 'tommcdo/vim-fubitive'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-rhubarb'
+Plug 'tpope/vim-ragtag'
 Plug 'tpope/vim-surround'
 call plug#end()
 
@@ -38,6 +38,7 @@ autocmd BufEnter * :syntax sync fromstart
 
 set spelllang=en_gb
 
+set autoindent
 set cursorline
 set expandtab
 set ignorecase
@@ -55,7 +56,6 @@ set relativenumber
 set shiftwidth=2
 set shortmess=I
 set signcolumn=yes
-set smartindent
 set tabstop=2 softtabstop=2
 set undodir=~/.vim/undo
 set undofile
