@@ -1,5 +1,3 @@
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
 # Homebrew
 if type brew &>/dev/null; then
   FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
@@ -28,6 +26,9 @@ if [ $(date +'%j') != $(stat -f '%Sm' -t '%j' ~/.zcompdump) ]; then
 else
   compinit -C
 fi
+
+# Completion for kitty
+kitty + complete setup zsh | source /dev/stdin
 
 # Start Starship
 eval "$(starship init zsh)"

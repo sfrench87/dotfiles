@@ -10,41 +10,41 @@ let mapleader = " "
 
 " Plugins
 call plug#begin('~/.vim/plugged')
+Plug 'bluz71/vim-nightfly-guicolors'
 Plug 'itchyny/lightline.vim'
+  let g:lightline = { 'colorscheme': 'nightfly' }
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'junegunn/seoul256.vim'
 Plug 'mattn/emmet-vim'
+  let g:user_emmet_mode='a'
+Plug 'mbbill/undotree'  
+  let g:undotree_SetFocusWhenToggle = 1
+  let g:undotree_SplitWidth = 35
 Plug 'mhinz/vim-signify'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'sheerun/vim-polyglot'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-ragtag'
 Plug 'tpope/vim-surround'
 call plug#end()
 
-" Set colorscheme and override some colors
-colo seoul256
-highlight LineNr ctermbg=237
-highlight CursorLineNr ctermbg=237
-highlight SignifySignAdd ctermbg=237
-highlight SignifySignChange ctermbg=237
-highlight SignifySignDelete ctermbg=237
+set termguicolors
+colo nightfly
 
 autocmd BufEnter * :syntax sync fromstart
 
 set spelllang=en_gb
 
 set autoindent
+set autoread
 set cursorline
 set expandtab
+set hidden
 set ignorecase
 set incsearch 
 set laststatus=2
-set lazyredraw
 set mouse=a
 set nobackup
 set noshowcmd
@@ -57,6 +57,8 @@ set shiftwidth=2
 set shortmess=I
 set signcolumn=yes
 set tabstop=2 softtabstop=2
+set ttyfast
+set ttimeout ttimeoutlen=50
 set undodir=~/.vim/undo
 set undofile
 set updatetime=300
@@ -65,6 +67,7 @@ set wildmode=full
 
 " Leader keymaps
 nnoremap <Leader>e :Lexplore<CR>
+nnoremap <Leader>u :UndotreeToggle<CR>
 nnoremap <Leader>f :Files<CR>
 nnoremap <Leader>c :Commits<CR>
 nnoremap <Leader>b :Buffers<CR>
@@ -79,7 +82,7 @@ let g:netrw_winsize = 25
 let g:netrw_liststyle = 3
 let g:netrw_banner = 0
 let g:netrw_sort_options = "i"
-let g:netrw_list_hide= netrw_gitignore#Hide()
+let g:netrw_list_hide = netrw_gitignore#Hide()
 
 " COC Extensions
 let g:coc_global_extensions = [
@@ -90,7 +93,3 @@ let g:coc_global_extensions = [
       \ 'coc-prettier',
       \ 'coc-emmet'
       \ ]
-
-" Lightline
-set ttimeout ttimeoutlen=50
-let g:lightline = { 'colorscheme': 'seoul256' }
