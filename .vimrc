@@ -57,8 +57,9 @@ set shiftwidth=2
 set shortmess=I
 set signcolumn=yes
 set tabstop=2 softtabstop=2
-set ttyfast
+set title
 set ttimeout ttimeoutlen=50
+set ttyfast
 set undodir=~/.vim/undo
 set undofile
 set updatetime=300
