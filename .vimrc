@@ -10,19 +10,17 @@ let mapleader = " "
 
 " Plugins
 call plug#begin('~/.vim/plugged')
-Plug 'bluz71/vim-nightfly-guicolors'
+Plug 'airblade/vim-gitgutter'
 Plug 'itchyny/lightline.vim'
-  let g:lightline = { 'colorscheme': 'nightfly' }
+  let g:lightline = { 'colorscheme': 'tender' }
+Plug 'jacoborus/tender.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'mattn/emmet-vim'
-  let g:user_emmet_mode='a'
-Plug 'mbbill/undotree'  
-  let g:undotree_SetFocusWhenToggle = 1
-  let g:undotree_SplitWidth = 35
-Plug 'mhinz/vim-signify'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  let g:user_emmet_mode = 'a'
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+Plug 'preservim/nerdtree'
 Plug 'sheerun/vim-polyglot'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'tpope/vim-commentary'
@@ -31,19 +29,16 @@ Plug 'tpope/vim-surround'
 call plug#end()
 
 set termguicolors
-colo nightfly
+colo tender
 
 autocmd BufEnter * :syntax sync fromstart
 
-set spelllang=en_gb
-
 set autoindent
-set autoread
 set cursorline
 set expandtab
 set hidden
 set ignorecase
-set incsearch 
+set incsearch
 set laststatus=2
 set mouse=a
 set nobackup
@@ -56,6 +51,7 @@ set relativenumber
 set shiftwidth=2
 set shortmess=I
 set signcolumn=yes
+set spelllang=en_gb
 set tabstop=2 softtabstop=2
 set title
 set ttimeout ttimeoutlen=50
@@ -63,12 +59,9 @@ set ttyfast
 set undodir=~/.vim/undo
 set undofile
 set updatetime=300
-set wildmenu
-set wildmode=full
 
 " Leader keymaps
-nnoremap <Leader>e :Lexplore<CR>
-nnoremap <Leader>u :UndotreeToggle<CR>
+nnoremap <Leader>n :NERDTreeToggle<CR>
 nnoremap <Leader>f :Files<CR>
 nnoremap <Leader>c :Commits<CR>
 nnoremap <Leader>b :Buffers<CR>
@@ -77,13 +70,6 @@ nnoremap <Leader>b :Buffers<CR>
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-
-" Netrw tweaks
-let g:netrw_winsize = 25
-let g:netrw_liststyle = 3
-let g:netrw_banner = 0
-let g:netrw_sort_options = "i"
-let g:netrw_list_hide = netrw_gitignore#Hide()
 
 " COC Extensions
 let g:coc_global_extensions = [
